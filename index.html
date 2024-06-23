@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <title>Vite + React + TS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Mini App</title>
+  </head>
+  <body>
+  <div id="wrap">
+    <div id="content">
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="root"></div>
+      <script src="/src/index.jsx" type="module"></script>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@tma.js/sdk@2.5.0/dist/index.iife.js"></script>
+  <script>
+    (function() {
+      let { retrieveLaunchParams, postEvent } = window.tmajs.sdk;
+      let lp = retrieveLaunchParams();
+
+      if (['macos', 'tdesktop', 'weba', 'web', 'webk'].includes(lp.platform)) {
+        return;
+      }
+
+      postEvent('web_app_expand');
+
+      document.body.classList.add('mobile-body');
+      document.getElementById('wrap').classList.add('mobile-wrap');
+      document.getElementById('content').classList.add('mobile-content');
+    })();
+  </script>
+  </body>
+</html>

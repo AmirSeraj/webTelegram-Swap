@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  background-image: linear-gradient(
+    120deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(0deg 25% 6%) 50%,
+    hsl(314deg 73% 7%) 100%
+  );
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8rem;
+  height: 100vh;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    /*grid-area: footer;*/
+}

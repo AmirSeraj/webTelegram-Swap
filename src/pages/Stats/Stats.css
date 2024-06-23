@@ -1,0 +1,16 @@
+.games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
